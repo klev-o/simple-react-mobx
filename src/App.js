@@ -1,11 +1,22 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+    render() {
 
-    </div>
-  );
+
+        return (
+            <div className="App">
+                <h1 className="top">Active tasks: 4</h1>
+                <div>Task</div>
+                <div>Task</div>
+                <div>Task</div>
+                <div>Task</div>
+
+                <div>Task Input</div>
+            </div>
+        )
+    }
+
+
 }
-
 export default App;
