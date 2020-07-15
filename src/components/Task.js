@@ -1,11 +1,23 @@
 import React from 'react';
 
-const Task = () => {
+const Task = (props) => {
+
+    const task = props.task;
 
     return (
         <div className='task'>
-            <p>Заголовок</p>
-            <button>Удалить</button>
+            <p>{task.title}</p>
+            <div className="action-btn">
+                {task.done ?
+                    <span aria-label="done" role="img">
+                      ✔️
+                    </span>
+                :
+                    <span aria-label="done" role="img">
+                      ❌
+                    </span>
+                }
+            </div>
         </div>
     );
 };

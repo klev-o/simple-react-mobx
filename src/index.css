@@ -7,7 +7,64 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    transition: 0.2s all;
+    user-select: none;
+}
+
+:root {
+    --bgc: #1aa8af;
+}
+
+.App {
+    margin: 30px auto;
+    padding: 10px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px #0000001a;
+    overflow: hidden;
+}
+
+.top {
+    background: var(--bgc);
+    color: #ffffff;
+    padding: 10px;
+    font-size: 28px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.task {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.task:hover {
+    background-color: #04395e3d;
+}
+
+.task p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text);
+}
+
+.task-done {
+    background-color: #00000027;
+}
+.task-done p {
+    color: #00000050;
+}
+
+.action-btn {
+    cursor: pointer;
+    margin-left: 10px;
+}
+.action-btn:hover {
+    background-color: #04395e3d;
+    border-radius: 5px;
 }

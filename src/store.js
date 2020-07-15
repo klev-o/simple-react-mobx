@@ -5,25 +5,28 @@ class Store {
         { id: 0, title: 'Сходить в магазин', done: false },
         { id: 1, title: 'Вынести мусор', done: true },
         { id: 2, title: 'Заработать 1 000 000 $', done: false },
-        { id: 2, title: 'Съесть доширак', done: false },
+        { id: 3, title: 'Бегать с дошираком', done: false },
+        { id: 4, title: 'Афигевать', done: true },
     ];
 
+
+    sortByDone = (a, b) => {
+        return a.done ? 1 : -1;
+    };
+
+    sortByTitle = (a, b) => {
+        if (a.done === b.done) {
+            return a.title > b.title ? 1 : -1;
+        }
+        return 0;
+    }
+
     get sortedTasks() {
-        return this.tasks.slice().sort((a, b) => {
-            let result;
-            if (a.done === b.done) {
-                result = 0;
-            } else if (a.done) {
-                result = 1
-            } else {
-                result = -1
-            }
-            return result;
-        });
+        return this.tasks.slice().sort(this.sortByDone).sort(this.sortByTitle);
     }
 
     get activeTasksCount() {
-        return this.tasks.filter(item => !item.done).length;
+        return this.tasks.filter(item => item.done).length;
     }
 }
 
