@@ -1,4 +1,5 @@
 import React from 'react';
+import Task from "./components/Task";
 
 class App extends React.Component {
     render() {
@@ -7,11 +8,7 @@ class App extends React.Component {
         return (
             <div className="App">
                 <h1 className="top">Active tasks: 4</h1>
-                <div>Task</div>
-                <div>Task</div>
-                <div>Task</div>
-                <div>Task</div>
-
+                <Task />
                 <div>Task Input</div>
             </div>
         )
