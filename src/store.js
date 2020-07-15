@@ -33,6 +33,18 @@ class Store {
         this.tasks = payload;
     }
 
+    addTask(task) {
+        let tasks = this.tasks;
+
+        tasks.push({
+            id: this.tasks.length || 0,
+            title: task,
+            done: false
+        });
+
+        this.setTasks(tasks);
+    }
+
     toggleTask(id) {
         let tasks = this.tasks;
         const index = tasks.map(task => task.id).indexOf(id);

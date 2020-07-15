@@ -2,6 +2,7 @@ import React from 'react';
 import Task from "./components/Task";
 import store from './store';
 import { observer } from 'mobx-react';
+import TaskInput from "./components/TaskInput";
 
 class App extends React.Component {
     render() {
@@ -29,7 +30,7 @@ class App extends React.Component {
                         deleteTask={() => store.deleteTask(task.id)}
                     ></Task>
                 ))}
-                <div>Task Input</div>
+                <TaskInput addTask={(task) => store.addTask(task)} />
             </div>
         )
     }
