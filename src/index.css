@@ -40,6 +40,7 @@ body {
     margin: 5px;
     border-radius: 5px;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .task:hover {

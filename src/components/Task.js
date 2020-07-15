@@ -12,7 +12,7 @@ const Task = (props) => {
     return (
         <div className={classes.join(' ')} onClick={props.toggleTask}>
             <p>{task.title}</p>
-            <div className="action-btn">
+            <div className="action-btn" onClick={props.deleteTask}>
                 <span aria-label="delete" role="img">
                   ❌
                 </span>

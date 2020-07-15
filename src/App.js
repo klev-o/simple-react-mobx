@@ -17,6 +17,7 @@ class App extends React.Component {
                         key={task.id}
                         task={task}
                         toggleTask={() => store.toggleTask(task.id)}
+                        deleteTask={() => store.deleteTask(task.id)}
                     ></Task>
                 ))}
                 <hr/>
@@ -25,6 +26,7 @@ class App extends React.Component {
                         key={task.id}
                         task={task}
                         toggleTask={() => store.toggleTask(task.id)}
+                        deleteTask={() => store.deleteTask(task.id)}
                     ></Task>
                 ))}
                 <div>Task Input</div>

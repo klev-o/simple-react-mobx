@@ -36,8 +36,14 @@ class Store {
     toggleTask(id) {
         let tasks = this.tasks;
         const index = tasks.map(task => task.id).indexOf(id);
-        tasks[index].done = !tasks[index].done;
-        this.setTasks(tasks);
+        if (index !== -1) {
+            tasks[index].done = !tasks[index].done;
+            this.setTasks(tasks);
+        }
+    }
+
+    deleteTask(id) {
+        this.setTasks(this.tasks.filter(item => item.id !== id));
     }
 }
 
