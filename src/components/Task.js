@@ -4,19 +4,18 @@ const Task = (props) => {
 
     const task = props.task;
 
+    const classes = ['task']
+    if (task.done) {
+        classes.push('task-done')
+    }
+
     return (
-        <div className='task'>
+        <div className={classes.join(' ')} onClick={props.toggleTask}>
             <p>{task.title}</p>
             <div className="action-btn">
-                {task.done ?
-                    <span aria-label="done" role="img">
-                      ✔️
-                    </span>
-                :
-                    <span aria-label="done" role="img">
-                      ❌
-                    </span>
-                }
+                <span aria-label="delete" role="img">
+                  ❌
+                </span>
             </div>
         </div>
     );

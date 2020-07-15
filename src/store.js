@@ -26,7 +26,18 @@ class Store {
     }
 
     get activeTasksCount() {
-        return this.tasks.filter(item => item.done).length;
+        return this.tasks.filter(item => !item.done).length;
+    }
+
+    setTasks(payload) {
+        this.tasks = payload;
+    }
+
+    toggleTask(id) {
+        let tasks = this.tasks;
+        const index = tasks.map(task => task.id).indexOf(id);
+        tasks[index].done = !tasks[index].done;
+        this.setTasks(tasks);
     }
 }
 

@@ -5,13 +5,26 @@ import { observer } from 'mobx-react';
 
 class App extends React.Component {
     render() {
+
+        const activeTasks = store.sortedTasks.filter(item => !item.done);
+        const doneTasks = store.sortedTasks.filter(item => item.done);
+
         return (
             <div className="App">
                 <h1 className="top">Active tasks: {store.activeTasksCount}</h1>
-                {store.sortedTasks.map(task => (
+                {activeTasks.map(task => (
                     <Task
-                        task={task}
                         key={task.id}
+                        task={task}
+                        toggleTask={() => store.toggleTask(task.id)}
+                    ></Task>
+                ))}
+                <hr/>
+                {doneTasks.map(task => (
+                    <Task
+                        key={task.id}
+                        task={task}
+                        toggleTask={() => store.toggleTask(task.id)}
                     ></Task>
                 ))}
                 <div>Task Input</div>
